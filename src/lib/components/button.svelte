@@ -1,3 +1,5 @@
+<svelte:options customElement="my-button" />
+
 <script lang="ts">
     const handleClick = () => {
         alert('ciao');

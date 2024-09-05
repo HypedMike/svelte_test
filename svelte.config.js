@@ -1,6 +1,9 @@
+import plugin from '@sveltejs/adapter-static';
 import adapter from '@sveltejs/adapter-static';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
 	kit: {
 		adapter: adapter({
 			// default options are shown. On some platforms
@@ -9,7 +12,13 @@ export default {
 			assets: 'build',
 			fallback: undefined,
 			precompress: false,
-			strict: true
+			strict: true,
 		})
-	}
-};
+	},
+	compilerOptions: {
+		customElement: true
+	},
+}
+
+
+export default config;
